@@ -9,3 +9,9 @@ We will deploy two example services in EdgeNet to test some basic functionalitie
 1. Selective Deployment
 2. Slice
 3. Subnamespace
+
+### Deployed services
+1. cdn-service.yaml
+   xxx
+2. ping-me-example.yaml
+   xxx
