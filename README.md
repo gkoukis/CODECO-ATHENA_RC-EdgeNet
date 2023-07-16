@@ -1,7 +1,6 @@
 # EdgeNet demo | CODECO project
 This is an EdgeNet demo for the 6 months of the CODECO project
 
-## EdgeNet examples/demo for CODECO project
 We will deploy two example services to test some basic functionalities of EdgeNet such as the Selective Deployment
 
 ### Instructions to run experiments on EdgeNet
