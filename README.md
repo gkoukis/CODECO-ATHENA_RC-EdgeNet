@@ -21,13 +21,13 @@ To run the specific example you need:
 ### Deployed services & description
 The yaml files:
 > *cdnserviceexample.yaml*
-~~~~
+
 The *cdnserviceexample* describes a simple cdn service - a multimedia app - in which EdgeNet picks up some nodes from specific geographic locations as we defined with a selector in the .yaml file to run our service. We can connect to these pods through the CL.
-~~~~
+
 > *ping-me-example.yaml*
-~~~~
+
 In the *ping-me-example* EdgeNet picks up some nodes from specific geographic locations as we defined with a selector in the .yaml file which ping a server or ip address. We can observe the log output of the pods pinging a server or ip address and the delay. If we have access to the server or ip address we can also observe through traffic control (e.g. tcp dump) the received pings from all over the globe. This example highlights the possible use of EdgeNet as a benchmarking tool for the CODECO usecases, setting up clients (around the globe) to test the provided services.
-~~~~
+
 
 ### General
 > Get a list of the contributed EdgeNet nodes
@@ -54,11 +54,12 @@ kubectl get sd --kubeconfig <mycfg.cfg> -n <mynamespace>
 kubectl get deployments --kubeconfig <mycfg.cfg> -n <mynamespace>
 ~~~~
 ~~~~
-kubectl get pods --kubeconfig <mycfg.cfg> -n <mynamespace>
-~~~~
-~~~~
 kubectl get services --kubeconfig <mycfg.cfg> -n <mynamespace>
 ~~~~
+~~~~
+kubectl get pods --kubeconfig <mycfg.cfg> -n <mynamespace>
+~~~~
+
 > Connect to a pod running our service with CL
 ~~~~
 kubectl exec -it <cdn-server-podname> bash --kubeconfig <mycfg.cfg> -n <mynamespace>
