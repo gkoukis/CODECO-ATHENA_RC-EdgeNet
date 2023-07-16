@@ -10,11 +10,8 @@ Detailed instructions to run experiments on EdgeNet can be found in https://www.
 #### Prerequisites
 To run the specific example you need:
 + *kubectl* installed
-
 + a namespace in which you have access such as *<-n mynamespace>* when registered in EdgeNet
-
 + a configuration file such as *<mycfg.cfg>* downloaded after registered in EdgeNet (this file needs to be replaced every few days to have access to EdgeNet)
-
 + the .yaml files
 
 
@@ -45,6 +42,7 @@ kubectl describe <node_name> --kubeconfig <mycfg.cfg> -n <mynamespace>
 ~~~~
 kubectl apply -f cdnserviceexample.yaml --kubeconfig <mycfg.cfg> -n <mynamespace>
 ~~~~
+A Selective Deployment datastructure is created which let us deploy our service based on the selector we defined in the .yaml file
 > Check the Selective Deployment, Deployments, Services, Pods
 ~~~~
 kubectl get sd --kubeconfig <mycfg.cfg> -n <mynamespace>
