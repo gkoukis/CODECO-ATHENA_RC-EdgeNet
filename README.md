@@ -3,10 +3,10 @@ This is an EdgeNet demo for the 6 months of the CODECO project
 
 We will deploy two example services to test some basic functionalities of EdgeNet such as the Selective Deployment
 
-### Instructions to run experiments on EdgeNet
+## Instructions to run experiments on EdgeNet
 Detailed instructions to run experiments on EdgeNet can be found in https://www.edge-net.org/pages/running-experiments.html and https://github.com/EdgeNet-project/edgenet
 
-#### Prerequisites
+### Prerequisites
 To run the specific example you need:
 + *kubectl* installed
 + a namespace in which you have access such as *<-n mynamespace>* when registered in EdgeNet
@@ -14,7 +14,7 @@ To run the specific example you need:
 + the .yaml files
 
 
-### Deployed services & description
+## Deployed services & description
 The yaml files:
 > *cdnserviceexample.yaml*
 
@@ -25,7 +25,7 @@ The *cdnserviceexample* describes a simple cdn service - a multimedia app - in w
 In the *ping-me-example* EdgeNet picks up some nodes from specific geographic locations as we defined with a selector in the .yaml file which ping a server or ip address. We can observe the log output of the pods pinging a server or ip address and the delay. If we have access to the server or ip address we can also observe through traffic control (e.g. tcp dump) the received pings from all over the globe. This example highlights the possible use of EdgeNet as a benchmarking tool for the CODECO usecases, setting up clients (around the globe) to test the provided services.
 
 
-### General
+## General
 > Get a list of the contributed EdgeNet nodes
 ~~~~
 kubectl get nodes -o wide --kubeconfig <mycfg.cfg> -n <mynamespace>
@@ -35,7 +35,7 @@ kubectl get nodes -o wide --kubeconfig <mycfg.cfg> -n <mynamespace>
 kubectl describe <node_name> --kubeconfig <mycfg.cfg> -n <mynamespace>
 ~~~~
 
-### Deployment & Check
+## Deployment & Check
 + First .yaml
 > Deploy the cdnserviceexample service
 ~~~~
@@ -81,7 +81,7 @@ kubectl logs <ping-source-podname> --kubeconfig <mycfg.cfg> -n <mynamespace>
 sudo tcpdump -i <eth0> icmp
 ~~~~
 
-### Delete the services
+## Delete the services
 ~~~~
 kubectl delete -f cdnserviceexample.yaml --kubeconfig <mycfg.cfg> -n <mynamespace>
 ~~~~
