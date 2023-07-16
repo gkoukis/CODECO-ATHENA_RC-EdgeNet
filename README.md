@@ -9,13 +9,13 @@ Detailed instructions to run experiments on EdgeNet can be found in https://www.
 
 #### Prerequisites
 To run the specific example you need:
-> *kubectl* installed
++ *kubectl* installed
 
-> a namespace in which you have access such as *<mynamespace>* when registered in EdgeNet
++ a namespace in which you have access such as *<mynamespace>* when registered in EdgeNet
 
-> a configuration file such as *<mycfg.cfg>* downloaded after registered in EdgeNet
++ a configuration file such as *<mycfg.cfg>* downloaded after registered in EdgeNet
 
-> the .yaml files
++ the .yaml files
 
 
 ### Deployed services & description
