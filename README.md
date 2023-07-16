@@ -5,6 +5,11 @@ This is a Test repo to test the Markdown language
 
 We will deploy two example services in EdgeNet to test some basic functionalities such as the Selective Deployment
 
+### Instructions to run experiments on EdgeNet
+Detailed instructions can be found in https://www.edge-net.org/pages/running-experiments.html and https://github.com/EdgeNet-project/edgenet
+#### Prerequisites
+
+
 ### Basic functionalities of EdgeNet
 1. Selective Deployment
 2. Slice
@@ -15,3 +20,8 @@ We will deploy two example services in EdgeNet to test some basic functionalitie
    xxx
 2. ping-me-example.yaml
    xxx
+
+Get a list of the contributed EdgeNet node
+~~~~
+kubectl get nodes -o wide --kubeconfig mycfg.cfg -n mynamespace
+~~~~
