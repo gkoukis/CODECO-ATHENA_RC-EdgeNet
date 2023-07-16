@@ -11,9 +11,9 @@ Detailed instructions to run experiments on EdgeNet can be found in https://www.
 To run the specific example you need:
 + *kubectl* installed
 
-+ a namespace in which you have access such as *<mynamespace>* when registered in EdgeNet
++ a namespace in which you have access such as *<-n mynamespace>* when registered in EdgeNet
 
-+ a configuration file such as *<mycfg.cfg>* downloaded after registered in EdgeNet
++ a configuration file such as *<mycfg.cfg>* downloaded after registered in EdgeNet (this file needs to be replaced every few days to have access to EdgeNet)
 
 + the .yaml files
 
@@ -45,7 +45,6 @@ kubectl describe <node_name> --kubeconfig <mycfg.cfg> -n <mynamespace>
 ~~~~
 kubectl apply -f cdnserviceexample.yaml --kubeconfig <mycfg.cfg> -n <mynamespace>
 ~~~~
-A selective deployment datastracture is created which let us deploy our service besed on the selector we defined
 > Check the Selective Deployment, Deployments, Services, Pods
 ~~~~
 kubectl get sd --kubeconfig <mycfg.cfg> -n <mynamespace>
@@ -82,7 +81,7 @@ kubectl logs <ping-source-podname> --kubeconfig <mycfg.cfg> -n <mynamespace>
 ~~~~
 > If server or ip address is accessible, observe the pings from the pods through tcpdump
 ~~~~
-sudo tcpdump -i | grep icmp
+sudo tcpdump -i <eth0> icmp
 ~~~~
 
 ### Delete the services
