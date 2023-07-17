@@ -3,7 +3,7 @@ apiVersion: apps.edgenet.io/v1alpha
 kind: SelectiveDeployment
 metadata:
   name: cdn-deployment
-  namespace: uom
+  namespace: athena-rc
 spec:
   workloads:
     deployment:
@@ -11,7 +11,7 @@ spec:
         kind: Deployment
         metadata:
           name: cdn-server
-          namespace: uom
+          namespace: athena-rc
           labels:
             app: cdn-server
         spec:
@@ -30,7 +30,8 @@ spec:
                   effect: NoSchedule
               containers:
                 - name: cdn-server
-                  image: emamatas/appserver
+                  image: busybox
+                  #image: emamatas/appserver
                     #command: ['/bin/sh', '-c', 'sleep infinity']
                   ports:
                     - containerPort: 80
@@ -51,14 +52,14 @@ spec:
         - Asia
         - North_America
       operator: In
-      quantity: 5
+      quantity: 3
       name: Continent
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: cdn-service
-  namespace: uom
+  namespace: athena-rc
 spec:
   type: ClusterIP
   ports:
