@@ -30,8 +30,8 @@ spec:
                   effect: NoSchedule
               containers:
                 - name: cdn-server
-                  image: busybox
-                  #image: emamatas/appserver
+                  #image: busybox
+                  image: emamatas/appserver
                     #command: ['/bin/sh', '-c', 'sleep infinity']
                   ports:
                     - containerPort: 80
