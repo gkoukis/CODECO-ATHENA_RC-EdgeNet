@@ -10,7 +10,7 @@ Detailed instructions to run experiments on EdgeNet can be found in https://www.
 To run the specific example you need:
 + *kubectl* installed
 + a namespace in which you have access such as *<-n mynamespace>* when registered in EdgeNet
-+ a configuration file such as *<mycfg.cfg>* downloaded after registered in EdgeNet (this file needs to be replaced every few days to have access to EdgeNet)
++ a configuration file such as *<mycfg.cfg>* downloaded after registered in EdgeNet (this file needs to be replaced every few days to access EdgeNet)
 + the .yaml files
 
 
@@ -22,7 +22,7 @@ The *cdnserviceexample* describes a simple cdn service - a multimedia app - in w
 
 > *ping-me-example.yaml*
 
-In the *ping-me-example* EdgeNet picks up some nodes from specific geographic locations as we defined with a selector in the .yaml file which ping a server or ip address. We can observe the log output of the pods pinging a server or ip address and the delay. If we have access to the server or ip address we can also observe through traffic control (e.g. tcp dump) the received pings from all over the globe. This example highlights the possible use of EdgeNet as a benchmarking tool for the CODECO usecases, setting up clients (around the globe) to test the provided services.
+In the *ping-me-example* EdgeNet picks up some nodes from specific geographic locations as we defined with a selector in the .yaml file which ping a server or ip address. We can observe the log output of the pods pinging a server or ip address and the delay. If we have access to the server or ip address we can also observe through traffic control (e.g. tcpdump) the received pings from all over the globe. This example highlights the possible use of EdgeNet as a benchmarking tool for the CODECO usecases i.e. setting up clients (around the globe) to test the provided services.
 
 
 ## General
