@@ -2,7 +2,7 @@ apiVersion: apps.edgenet.io/v1alpha
 kind: SelectiveDeployment
 metadata:
   name: ping-me-example
-  namespace: uom
+  namespace: athena-rc
 spec:
   workloads:
     daemonset:
@@ -10,7 +10,7 @@ spec:
         kind: DaemonSet
         metadata:
           name: ping-source
-          namespace: uom
+          namespace: athena-rc
           labels:
             app: ping-source
         spec:
@@ -30,7 +30,7 @@ spec:
                 - name: ping-source
                   image: alpine
                   command: ['/bin/ping']
-                  args: ['ops.swn.uom.gr']
+                  args: ['google.com']
                   resources:
                     limits:
                       cpu: 50m
