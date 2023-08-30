@@ -4,14 +4,18 @@ This is an EdgeNet demo for the 6 months of the CODECO project
 We will deploy two example services to test some basic functionalities of EdgeNet such as the Selective Deployment
 
 ## Instructions to run experiments on EdgeNet
-Detailed instructions to run experiments on EdgeNet can be found in https://www.edge-net.org/pages/running-experiments.html and https://github.com/EdgeNet-project/edgenet
+Detailed instructions to run experiments on EdgeNet can be found in [EdgeNet-Testbed site](https://www.edge-net.org/pages/running-experiments.html) and the respected [Github](https://github.com/EdgeNet-project/edgenet)
 
 ### Prerequisites
-To run the specific example you need:
-+ *kubectl* installed
-+ a namespace in which you have access such as *<-n mynamespace>* when registered in EdgeNet
-+ a configuration file such as *<mycfg.cfg>* downloaded after registered in EdgeNet (this file needs to be replaced every few days to access EdgeNet)
-+ the .yaml files
+To run the following examples you will need:
+1. [``kubectl``](https://kubernetes.io/docs/reference/kubectl/overview/), the [Kubernetes](https://kubernetes.io/) command-line interface.
+
+- [Install kubectl on Linux](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux)
+- [Install kubectl on macOS](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos)
+- [Install kubectl on Windows](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows)
+1. a namespace in which you have access such as *<-n mynamespace>* when registered in EdgeNet
+1. a configuration file such as *<mycfg.cfg>* downloaded after registered in EdgeNet (this file needs to be replaced every few days to access EdgeNet)
+1. the .yaml files
 
 
 ## Deployed services & description
