@@ -7,6 +7,6 @@ In the [demo](https://github.com/gkoukis/MyTest/blob/main/demo/) folder we inclu
 
 **[TODO]:** Test the deployment of EdgeNet features in our Kubernetes cluster environment. Check [here](https://github.com/EdgeNet-project/edgenet/blob/main/docs/tutorials/deploy_edgenet_to_kube.md).
 
-**[TODO]:** Comply with EdgeNet instructions for [contributions](https://github.com/EdgeNet-project/edgenet/blob/main/docs/guides/contribution_guides.md)
+**[TODO]:** Comply with EdgeNet instructions for [contributions](https://github.com/EdgeNet-project/edgenet/blob/main/docs/guides/contribution_guides.md).
 
 More information about **EdgeNet** can be found in [EdgeNet-Testbed site](https://www.edge-net.org/pages/running-experiments.html) and the respected [Github](https://github.com/EdgeNet-project/edgenet).
