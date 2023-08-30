@@ -1,5 +1,5 @@
 # EdgeNet demo | CODECO project
-This is an [EdgeNet](https://www.edge-net.org/) demo prepared by the [ATHENA-rc](https://www.athenarc.gr/en/home) team during the first 6 months of the [CODECO project](https://he-codeco.eu/).
+This is an [EdgeNet](https://www.edge-net.org/) demo prepared by the [ATHENA-RC](https://www.athenarc.gr/en/home) team during the first 6 months of the [CODECO project](https://he-codeco.eu/).
 
 We will deploy two demo services described in the attached [``.yaml`` files](https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/) to test some basic functionalities of EdgeNet such as the [Selective Deployment](https://github.com/EdgeNet-project/edgenet/blob/main/docs/custom_resources.md#selective-deployment) which allows users to deploy pods onto nodes based on their locations.
 
