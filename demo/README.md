@@ -138,11 +138,25 @@ kubectl logs <ping-source-podname> --kubeconfig mycfg.cfg -n mynamespace
 sudo tcpdump -i <eth0> icmp
 ```
 
-## Check Description
+## Check the Description of resources
 Use the ``kubectl describe`` command to retrieve detailed information about Kubernetes resources, such as SelectiveDeployments, deployments, pods, services, nodes etc.
 **Example:**
 ```bash
-kubectl describe deployment/cdn-server --kubeconfig mycfg.cfg -n mynamespace
+kubectl describe sd/ping-me-example --kubeconfig mycfg.cfg -n mynamespace
+# Name:         ping-me-example
+# Namespace:    athena-rc
+# Labels:       <none>
+# Annotations:  <none>
+# API Version:  apps.edgenet.io/v1alpha1
+# Kind:         SelectiveDeployment
+# Metadata:
+#  Creation Timestamp: ...
+# ...
+# Status:
+#  Message:  The desired workload(s) are created successfully
+#  Ready:    1/1
+#  State:    Running
+# Events:     <none>
 ```
 
 ## Delete the .yaml file
