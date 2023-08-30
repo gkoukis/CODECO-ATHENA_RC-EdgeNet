@@ -1,19 +1,19 @@
 # EdgeNet demo | CODECO project
-This is an [EdgeNet](https://www.edge-net.org/) demo prepared by the [ATHENA-RC](https://www.athenarc.gr/en/home) team during the first 6 months of the [CODECO project](https://he-codeco.eu/).
+This is an [EdgeNet](https://www.edge-net.org/) demo prepared by the [ATHENA-RC](https://www.athenarc.gr/en/home) team during the initial 6 months of the [CODECO project](https://he-codeco.eu/).
 
-We will deploy two demo services described in the attached [``.yaml`` files](https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/) to test some basic functionalities of EdgeNet such as the [Selective Deployment](https://github.com/EdgeNet-project/edgenet/blob/main/docs/custom_resources.md#selective-deployment) which allows users to deploy pods onto nodes based on their locations.
+We will deploy two demo services as described in the attached [``.yaml`` files](https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/) to test some basic functionalities of EdgeNet such as the [Selective Deployment](https://github.com/EdgeNet-project/edgenet/blob/main/docs/custom_resources.md#selective-deployment) which allows users to deploy pods onto nodes based on their locations.
 
 ## Demo video
 **The following video represents a demo of the deployed ``.yaml`` files**
 https://github.com/gkoukis/MyTest/assets/127508084/942e05ad-2af0-484e-a80b-f984d562562d
 
-## Instructions to run experiments on EdgeNet
-We provide instructions of the prerequisites a user needs to run an experiment on EdgeNet and the commands to run the examples. The detailed instructions to run experiments on EdgeNet as well as the provided features can be found in [EdgeNet-Testbed site](https://www.edge-net.org/pages/running-experiments.html) and the respected [Github](https://github.com/EdgeNet-project/edgenet).
+## Instructions for Running Experiments on EdgeNet
+We provide instructions of the prerequisites required for conducting experiments on EdgeNet, along with the precise commands necessary to execute the provided examples. Detailed guidelines for running experiments on EdgeNet, along with insights into the featured functionalities, are available on the [EdgeNet-Testbed site](https://www.edge-net.org/pages/running-experiments.html) and its dedicated [Github repository](https://github.com/EdgeNet-project/edgenet).
 
-Additional tutorials can be found in the [EdgeNet Github](https://github.com/EdgeNet-project/edgenet/tree/main/docs/tutorials/old)
+For additional tutorials explore the [EdgeNet Github](https://github.com/EdgeNet-project/edgenet/tree/main/docs/tutorials/old)
 
 ### Prerequisites
-To run the following examples you will need:
+To successfully execute the following examples, you will need:
 1. to create an EdgeNet account that you can obtain for free by signing up on the landing app available here [https://www.edge-net.org/pages/running-experiments.html](https://www.edge-net.org/pages/running-experiments.html). More information about the registration can be found there.
 2. [``kubectl``](https://kubernetes.io/docs/reference/kubectl/overview/), the [Kubernetes](https://kubernetes.io/) command-line interface.
 
@@ -21,7 +21,7 @@ To run the following examples you will need:
 - [Install kubectl on macOS](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos)
 - [Install kubectl on Windows](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows)
 
-3. a *kubeconfig file* - a configuration file - downloaded from the [Download my kubeconfig file](https://landing.edge-net.org) tab after logging in to EdgeNet. In what follows, we will assume that it is saved in your working directory on your system as *``mycfg.cfg``*.
+3. a *kubeconfig file* - a configuration file - obtained from the [Download my kubeconfig file](https://landing.edge-net.org) tab after logging in to EdgeNet. In what follows, we will assume that it is saved in your working directory on your system as *``mycfg.cfg``*.
 
 ** Note that this kubeconfig file needs to be replaced every few days in order to have access to EdgeNet.
 
@@ -38,7 +38,7 @@ The *cdnserviceexample* describes a simple cdn service - a multimedia app - in w
 
 > *``ping-me-example.yaml``*
 
-In the *ping-me-example* EdgeNet selects some nodes from specific geographic locations as we defined with a selector in the ``.yaml`` file which ping a server or ip address. We can observe the log output of the pods pinging a server or ip address and the delay. If we have access to the server or ip address we can also observe through traffic control (e.g. [``tcpdump``](https://www.tcpdump.org/index.html#latest-releases) the received pings from all over the globe. This example highlights the possible use of EdgeNet as a benchmarking tool for the CODECO usecases i.e. setting up clients (around the globe) to test the provided services.
+In the *ping-me-example* EdgeNet again leverages its location-based node selection, as defined by the selector in the ``.yaml`` file and selects nodes to ping a server or ip address. We can observe the log output of the pods pinging a server or ip address and the delay. If we have access to the server or ip address we can also observe through traffic control (e.g. [``tcpdump``](https://www.tcpdump.org/index.html#latest-releases) the received pings from all over the globe. This example highlights the possible use of EdgeNet as a benchmarking tool for the CODECO usecases i.e. setting up clients (around the globe) to test the provided services.
 
 
 ## General commands
