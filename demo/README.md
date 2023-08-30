@@ -140,6 +140,7 @@ sudo tcpdump -i <eth0> icmp
 
 ## Check the Description of resources
 Use the ``kubectl describe`` command to retrieve detailed information about Kubernetes resources, such as SelectiveDeployments, deployments, pods, services, nodes etc.
+
 **Example:**
 ```bash
 kubectl describe sd/ping-me-example --kubeconfig mycfg.cfg -n mynamespace
