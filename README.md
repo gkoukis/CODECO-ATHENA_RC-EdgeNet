@@ -10,6 +10,8 @@ https://github.com/gkoukis/MyTest/assets/127508084/942e05ad-2af0-484e-a80b-f984d
 ## Instructions to run experiments on EdgeNet
 We provide instructions of the prerequisites a user needs to run an experiment on EdgeNet and the commands to run the examples. The detailed instructions to run experiments on EdgeNet as well as the provided features can be found in [EdgeNet-Testbed site](https://www.edge-net.org/pages/running-experiments.html) and the respected [Github](https://github.com/EdgeNet-project/edgenet).
 
+Additional tutorials can be found in the [EdgeNet Github](https://github.com/EdgeNet-project/edgenet/tree/main/docs/tutorials/old)
+
 ### Prerequisites
 To run the following examples you will need:
 1. to create an EdgeNet account that you can obtain for free by signing up on the landing app available here [https://www.edge-net.org/pages/running-experiments.html](https://www.edge-net.org/pages/running-experiments.html). More information about the registration can be found there.
@@ -72,7 +74,7 @@ kubectl get deployments --kubeconfig mycfg.cfg -n mynamespace
 ```bash
 kubectl get services --kubeconfig mycfg.cfg -n mynamespace
 # NAME          TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)           AGE   SELECTOR
-# cdn-service   ClusterIP   10.110.184.215   <none>        80/TCP,8080/TCP   3m   app=cdn-server
+# cdn-service   ClusterIP   10.244.1.215     <none>        80/TCP,8080/TCP   3m   app=cdn-server
 ```
 ```bash
 kubectl get replicaset --kubeconfig mycfg.cfg -n mynamespace
@@ -136,12 +138,21 @@ kubectl logs <ping-source-podname> --kubeconfig mycfg.cfg -n mynamespace
 sudo tcpdump -i <eth0> icmp
 ```
 
+## Check Description
+Use the ``kubectl describe`` command to retrieve detailed information about Kubernetes resources, such as SelectiveDeployments, deployments, pods, services, nodes etc.
+**Example:**
+```bash
+kubectl describe deployment/cdn-server --kubeconfig mycfg.cfg -n mynamespace
+```
+
 ## Delete the .yaml file
+> Delete the **cdnserviceexample.yaml** file
 ```bash
 kubectl delete -f cdnserviceexample.yaml --kubeconfig mycfg.cfg -n mynamespace
 # selectivedeployment.apps.edgenet.io "cdn-deployment" deleted
 # service "cdn-service" deleted
 ```
+> Delete the **ping-me-example.yaml** file
 ```bash
 kubectl delete -f ping-me-example.yaml --kubeconfig mycfg.cfg -n mynamespace
 # selectivedeployment.apps.edgenet.io "ping-me-example" deleted
