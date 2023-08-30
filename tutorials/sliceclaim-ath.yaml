@@ -1,0 +1,33 @@
+# sliceclaim-ath.yaml
+apiVersion: core.edgenet.io/v1alpha1
+kind: SliceClaim
+metadata:
+  name: athena-rc-lab-netmet
+  namespace: athena-rc
+spec:
+  slicename: athena-rc-lab-netmet
+  nodeselector:
+    selector:
+      nodeSelectorTerms:
+      - matchExpressions:
+          - key: edge-net.io/city
+#          - key: edge-net.io/state
+#          - key: edge-net.io/country         
+#          - key: edge-net.io/continent
+#          - key: edge-net.io/polygon                                        
+            operator: In
+            values:
+            - Thessaloniki
+#            - State
+#            - Greece
+#            - Europe # 
+#            - Polygon
+    nodecount: 1
+    resources:
+      requests:
+        cpu: 4
+        memory: "4000Mi"
+      limits:
+        cpu: 8
+        memory: "20000Mi"
+#  expiry: "2023-09-01T09:00:00Z"

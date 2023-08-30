@@ -1,0 +1,20 @@
+# subnamespace-Subtenant-ath-george.yaml
+#The subnamespaces feature offers two types of tenancy; consumer and vendor. The consumer one provides workspaces for members of the tenant such as teams and departments, whereas the vendor one shapes out a subtenant to ensure data privacy. You must decide by which type you are creating a subnamespace because changing the type is not allowed after creation.
+apiVersion: core.edgenet.io/v1alpha1
+kind: SubNamespace
+metadata:
+  name: athena-lab
+#  namespace: athena-rc-lab-netmet
+  namespace: athena-rc
+spec:
+  subtenant:
+    resourceallocation:
+      cpu: "4000m"
+      memory: "4Gi"
+    owner:
+      firstname: Georgios
+      lastname: Koukis
+      email: georgekouk29702970@gmail.com
+      phone: "+306946045121"
+    sliceclaim: athena-lab-exercises
+#  expiry: "2023-10-01T09:00:00Z"
