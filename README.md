@@ -13,20 +13,23 @@ To run the following examples you will need:
 - [Install kubectl on Linux](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux)
 - [Install kubectl on macOS](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos)
 - [Install kubectl on Windows](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows)
-1. a namespace in which you have access such as *<-n mynamespace>* when registered in EdgeNet
-1. a configuration file such as *<mycfg.cfg>* downloaded after registered in EdgeNet (this file needs to be replaced every few days to access EdgeNet)
-1. the .yaml files
+
+1. to create an EdgeNet account that you can obtain for free by signing up on the landing app available here [https://www.edge-net.org/pages/running-experiments.html](https://www.edge-net.org/pages/running-experiments.html). More information about the registration can be found there.
+1. a *<kubeconfig file>* - a configuration file - downloaded from the [Download my kubeconfig file](https.//landing.edge-net.org) tab after logging in to EdgeNet. In what follows, we will assume that it is saved in your working directory on your system as *<``./mycfg.cfg``>*.
+** Note that this kubeconfig file needs to be replaced every few days in order to have access to EdgeNet.
+1. a *<namespace>* - in which you have access when registered in EdgeNet - in order to deploy the examples. In what follows, we will assume that it named as *<``mynamespace``>*. 
+1. the attached [``.yaml`` files](https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/)
 
 
 ## Deployed services & description
-The yaml files:
-> *cdnserviceexample.yaml*
+The example [``.yaml``] files:
+> [``*cdnserviceexample.yaml*``]
 
-The *cdnserviceexample* describes a simple cdn service - a multimedia app - in which EdgeNet picks up some nodes from specific geographic locations as we defined with a selector in the .yaml file to run our service. We can connect to these pods through the CL.
+The *cdnserviceexample* describes a simple cdn service - a multimedia app - in which EdgeNet selects some nodes from specific geographic locations as we defined with a selector in the [``.yaml``] file to run our service. We can connect to these pods through the CL.
 
-> *ping-me-example.yaml*
+> [``*ping-me-example.yaml*``]
 
-In the *ping-me-example* EdgeNet picks up some nodes from specific geographic locations as we defined with a selector in the .yaml file which ping a server or ip address. We can observe the log output of the pods pinging a server or ip address and the delay. If we have access to the server or ip address we can also observe through traffic control (e.g. tcpdump) the received pings from all over the globe. This example highlights the possible use of EdgeNet as a benchmarking tool for the CODECO usecases i.e. setting up clients (around the globe) to test the provided services.
+In the *ping-me-example* EdgeNet selects some nodes from specific geographic locations as we defined with a selector in the [``.yaml``] file which ping a server or ip address. We can observe the log output of the pods pinging a server or ip address and the delay. If we have access to the server or ip address we can also observe through traffic control (e.g. [``tcpdump``]() the received pings from all over the globe. This example highlights the possible use of EdgeNet as a benchmarking tool for the CODECO usecases i.e. setting up clients (around the globe) to test the provided services.
 
 
 ## General
@@ -92,3 +95,6 @@ kubectl delete -f cdnserviceexample.yaml --kubeconfig <mycfg.cfg> -n <mynamespac
 ~~~~
 kubectl delete -f ping-me-example.yaml --kubeconfig <mycfg.cfg> -n <mynamespace>
 ~~~~
+
+The following video represents a demo of the deployed [``.yaml``] files
+
