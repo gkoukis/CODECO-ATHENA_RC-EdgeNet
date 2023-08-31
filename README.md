@@ -1,5 +1,5 @@
 # EdgeNet | CODECO project
-This is an [EdgeNet](https://www.edge-net.org/) repository prepared by the [ATHENA-RC](https://www.athenarc.gr/en/home) team for the WP5 of the [CODECO project](https://he-codeco.eu/).
+This repository is prepared by the [ATHENA-RC](https://www.athenarc.gr/en/home) team demonstrating some [EdgeNet](https://www.edge-net.org/) demo and functionalities for the WP5 of the [CODECO project](https://he-codeco.eu/).
 
 ## Tutorials Folder
 
