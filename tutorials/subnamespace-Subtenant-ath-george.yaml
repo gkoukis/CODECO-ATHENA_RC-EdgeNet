@@ -15,6 +15,6 @@ spec:
       firstname: Georgios
       lastname: Koukis
       email: georgekouk29702970@gmail.com
-      phone: "+306946045121"
+      phone: ""
     sliceclaim: athena-lab-exercises
 #  expiry: "2023-10-01T09:00:00Z"
