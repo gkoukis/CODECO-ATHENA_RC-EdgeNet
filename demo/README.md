@@ -10,7 +10,7 @@ https://github.com/gkoukis/MyTest/assets/127508084/942e05ad-2af0-484e-a80b-f984d
 ## Instructions for Running Experiments on EdgeNet
 We provide instructions of the prerequisites required for conducting experiments on EdgeNet, along with the precise commands necessary to execute the provided examples. Detailed guidelines for running experiments on EdgeNet, along with insights into the featured functionalities, are available on the [EdgeNet-Testbed site](https://www.edge-net.org/pages/running-experiments.html) and its dedicated [Github repository](https://github.com/EdgeNet-project/edgenet).
 
-For additional tutorials explore the [EdgeNet Github](https://github.com/EdgeNet-project/edgenet/tree/main/docs/tutorials/old)
+For additional demos and tutorials explore the [EdgeNet Github](https://github.com/EdgeNet-project/edgenet/tree/main/docs/tutorials/old)
 
 ### Prerequisites
 To successfully execute the following examples, you will need:
