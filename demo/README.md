@@ -3,6 +3,8 @@ This is an [EdgeNet](https://www.edge-net.org/) demo prepared by the [ATHENA-RC]
 
 We will deploy two demo services as described in the attached [``.yaml`` files](https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/) to test some basic functionalities of EdgeNet such as the [Selective Deployment](https://github.com/EdgeNet-project/edgenet/blob/main/docs/custom_resources.md#selective-deployment) which allows users to deploy pods onto nodes based on their locations.
 
+Please ensure that you **update the namespace** and the related information to match your own.
+
 ## Demo video
 **The following video represents a demo of the deployed ``.yaml`` files**
 https://github.com/gkoukis/MyTest/assets/127508084/942e05ad-2af0-484e-a80b-f984d562562d
@@ -40,6 +42,8 @@ The *cdnserviceexample* describes a simple cdn service - a multimedia app - in w
 
 In the *ping-me-example* EdgeNet again leverages its location-based node selection, as defined by the selector in the ``.yaml`` file and selects nodes to ping a server or ip address. We can observe the log output of the pods pinging a server or ip address and the delay. If we have access to the server or ip address we can also observe through traffic control (e.g. [``tcpdump``](https://www.tcpdump.org/index.html#latest-releases) the received pings from all over the globe. This example highlights the possible use of EdgeNet as a benchmarking tool for the CODECO usecases i.e. setting up clients (around the globe) to test the provided services.
 
+
+Within the ``selector`` field of the ``.yaml`` files, you can configure the parameters of the chosen nodes, such as those corresponding to ``Continent``, ``Country``, ``State``, or ``City``.
 
 ## General commands
 > Get a list of the contributed EdgeNet nodes
