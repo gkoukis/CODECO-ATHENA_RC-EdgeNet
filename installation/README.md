@@ -1,15 +1,13 @@
-In the [CODECO_edgenet](https://github.com/gkoukis/codeco_edgenet) and [CODECO_edgenet_node](https://gitlab.eclipse.org/gkoukis/codeco_edgenet_node/-/tree/main) we have updated the code from the official EdgeNet repository (including bug and error fixing) to utilize some of the functionalities EdgeNet provides in our own K8s cluster as described in [here](https://github.com/EdgeNet-project/edgenet/blob/main/docs/README.md#multitenancy) and [here](https://github.com/EdgeNet-project/edgenet/blob/main/docs/tutorials/deploy_edgenet_to_kube.md). In particular, we explore the **Multiprovider** and **Multitenancy** features.
+# Deploying EdgeNet features/CRDs within a local Kubernetes cluster environment
+In the [CODECO_edgenet](https://github.com/swnuom/edgenet) and [CODECO_edgenet_node](https://github.com/swnuom/node) we have forked the code from the official EdgeNet repository and contributed with minor bug fixes and improvements to enhance the overall functionality of the infrastructure as described in [here](https://github.com/EdgeNet-project/edgenet/blob/main/docs/README.md#components) and [here](https://github.com/EdgeNet-project/edgenet/blob/main/docs/tutorials/deploy_edgenet_to_kube.md). In particular, we explore the **Multiprovider** (i.e. contribute a node into an EdgeNet cluster) and **Multitenancy** (enabling the utilization of a shared cluster such as tenant and role requests, slice and subnamespaces) features.
 
-With the **Multiprovider** feature we can simply contribute a node into our cluster. 
-With the **Multitenancy** feature we explore the CRDs EdgeNet provides to enable the utilization of a shared cluster such as tenant and role requests, slice and subnamespaces.
+We offer examples and commands to illustrate the utilization of these features within a K8s cluster, which comprises one master node (referred to as 'athm3') and one worker node (referred to as 'athw7'), both running Ubuntu 22.04.2 LTS. Our Kubernetes cluster has been configured using Ansible playbooks to integrate Edgenet.
 
-We provide examples and commands to demonstrate the utilization of these features in a K8s cluster consisting of 1 master node (named athm3) and 1 worker node (named athw7) with Ubuntu 22.04.2 LTS.
-Our K8s cluster is configured with Ansible playbooks to incorporate Edgenet.
 
 ## Create local K8s - EdgeNet cluster
-**In the master node (athm3)** we have cloned the updated [CODECO_edgenet](https://gitlab.eclipse.org/gkoukis/codeco_edgenet/-/tree/main). We also see a vpnpeer.yaml which is used to maintain the LAN among the nodes of the cluster.
+**On the master node (athm3)** we have cloned the forked version of[CODECO_edgenet](https://github.com/swnuom/edgenet). Additionally, within the repository, there is a _vpnpeer.yaml_ file, which serves the purpose of maintaining the Local Area Network (LAN) connectivity among the nodes within the cluster.
 
-> Check the vpnpeer.yaml
+> Check the vpnpeer.yaml on master (athm3)
 ```bash
 cat vpnpeer.yaml
 #apiVersion: networking.edgenet.io/v1alpha1
@@ -31,7 +29,7 @@ cat vpnpeer.yaml
 #	athm3   10.183.5.27   fdb4:ae86:ec99:4004::27   83.212.134.27   51820
 ```
 
-> In the worker node (athw7) we have a similar vpnpeer.yaml
+> On the worker node (athw7) we have a corresponding _vpnpeer.yaml_ file with the same purpose. This files are used to facilitate LAN connectivity among the nodes in the cluster.
 ```bash
 cat vpnpeer.yaml
 #apiVersion: networking.edgenet.io/v1alpha1
@@ -63,7 +61,7 @@ kubectl apply -f vpnw7.yaml
 #	athm3   10.183.5.27   fdb4:ae86:ec99:4004::27   83.212.134.27   51820
 #	athw7   10.183.5.35   fdb4:ae86:ec99:4004::35   83.212.134.35   51820
 ```
-> Finally, we copy the whole public_ehome.cfg found it the .kube file (https://github.com/swnuom/edgenet/blob/main/configs/public_ehome.cfg) into the edgenet/configs/public_ehome.cfg
+> Finally, we copy the whole public_ehome.cfg file found in the .kube/ directory into the edgenet/configs/public_ehome.cfg (https://github.com/swnuom/edgenet/blob/main/configs/public_ehome.cfg))
 ```bash
 cat .kube/config-public
 ```
@@ -73,14 +71,14 @@ sudo pico edgenet/configs/public_ehome.cfg
 
 ## Multiprovider
 
-We can simply contribute a node as follows: We ssh into the node we want to contribute (e.g. named kubem2) and
+To contribute a node, you can follow these simple steps: Begin by establishing an SSH connection to the node you intend to contribute, such as the one named _kubem2_.
 
-> We clone the [EdgeNet / node repo](https://gitlab.eclipse.org/gkoukis/codeco_edgenet_node/-/tree/main) in the node. 
+> We clone the [EdgeNet / node repo](https://github.com/swnuom/node) in the node (kubem2). 
 ```bash
 git clone https://github.com/swnuom/node.git
 ```
 
-Now we need to copy the publig key of the master node (athm3) into the contributed node (kubem2) so any node we want to contribute, it can join the cluster.
+> Now we need to copy the publig key of the master node (athm3) into the contributed node (kubem2) so any node we want to contribute, it can join the cluster.
 
 > We find and copy the public key of the master node (athm3) found in the ssh folder of the master node (athm3)
 ```bash
@@ -106,7 +104,7 @@ cd node/
 ```
 
 > We can repeat the process in the Multiprovider section to contribute as many nodes as we want
-> Now if we login to our master node (athm3) we can observe the contributed node joining the cluster
+> Now if we SSH to our master node (athm3) we can observe the contributed node joining the cluster
 ```bash
 kubectl get nodes -o wide
 #	NAME                    STATUS   ROLES                  AGE     VERSION    INTERNAL-IP       EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION      CONTAINER-RUNTIME
@@ -127,14 +125,14 @@ kubectl get nodecontributions
 
 ## Multitenancy
 
->In the master node (athm3) we can access the resource as admins 
+>On the master node (athm3) we can access the resource as admins 
 ```bash
 kubectl get pods
 #	No resources found in default namespace.
 kubectl get tenantrequest
 #	No resources found
 ```
-> These access rights are seen in the configuration files
+> These rights are accessed through a configuration files (_config_) found in .kube/ directory
 ```bash
 ls .kube/
 #	cache  config  config-public
@@ -142,7 +140,7 @@ cat .kube/config
 #   ...
 ```
 
-> From the master node (athm3) with the _create-user.sh_ script we create a username whose name is the provided email and also create the respective namespace.
+> From the master node (athm3) with the _create-user.sh_ script we can create a username whose name is the provided email (_user@gmail.com_) and also create the respective namespace (_uom_).
 ```bash
 ./create-user.sh
 #	creating namespace
@@ -171,7 +169,7 @@ ls .kube/
 cat .kube/config
 #   ...
 ```
-> If we try to observe the resources (e.g. pods and tenantrequest) from the user perspective, we cannot do that due to rights limitation.
+> If we try to observe the resources (e.g. pods and tenantrequest) from the user perspective, we cannot do that due to rights limitation
 ```bash
 kubectl get pods --kubeconfig config-user@gmail.com -n uom
 #	Error from server (Forbidden): pods is forbidden: User "user@gmail.com" cannot list resource "pods" in API group "" in the namespace "uom"
@@ -189,7 +187,7 @@ kubectl get tenantrequest/uom
 #	NAME   OFFICIAL NAME             SHORT NAME   URL                 CITY           COUNTRY   EXPIRY                 STATUS    AGE
 #	uom    University of Macedonia   uom          http://www.uom.gr   Thessaloniki   Greece    2023-10-17T21:35:57Z   Pending   103s
 ```
-> As admins we **approve** the tenant request adding the "_approved: true_" under the spec field
+> As admins we **approve** the tenant request by adding the "_approved: true_" under the "_spec_" field
 ```bash
 kubectl edit tenantrequest/uom --kubeconfig config
 #	tenantrequest.registration.edgenet.io/uom edited
