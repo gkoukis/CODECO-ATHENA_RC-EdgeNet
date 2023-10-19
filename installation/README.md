@@ -123,7 +123,7 @@ kubectl get nodecontributions
 #	gr-b-abf4   195.251.209.231   22     true      Node Accessed   4m13s
 ```
 
-[![asciicast](https://asciinema.org/a/ayTSSxOSZfbbc7dPk5ay6K06M.svg)](https://asciinema.org/a/ayTSSxOSZfbbc7dPk5ay6K06M)
+[![asciicast](https://asciinema.org/a/uDQ6Kk152u51uzyrh5b4HLjqD.svg)](https://asciinema.org/a/uDQ6Kk152u51uzyrh5b4HLjqD)
 
 ## Multitenancy
 
@@ -231,6 +231,6 @@ curl 10.109.130.222
 #   ...
 ```
 
-[![asciicast](https://asciinema.org/a/G4ZCAEk9Nvb6X2CgJysyqj7QS.svg)](https://asciinema.org/a/G4ZCAEk9Nvb6X2CgJysyqj7QS)
+[![asciicast](https://asciinema.org/a/ASLdFO7kzjdzFJOLfpQMK3OBs.svg)](https://asciinema.org/a/ASLdFO7kzjdzFJOLfpQMK3OBs)
 
 > With the nessesary changes we can run the demo examples provided in [here](https://gitlab.eclipse.org/eclipse-research-labs/codeco-project/experimentation-framework-and-demonstrations/edgenet-framework/-/tree/main/demo?ref_type=heads)
