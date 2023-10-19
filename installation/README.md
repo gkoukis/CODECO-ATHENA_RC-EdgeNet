@@ -5,7 +5,7 @@ We offer examples and commands to illustrate the utilization of these features w
 
 
 ## Create local K8s - EdgeNet cluster
-**On the master node (athm3)** we have cloned the forked version of[CODECO_edgenet](https://github.com/swnuom/edgenet). Additionally, within the repository, there is a _vpnpeer.yaml_ file, which serves the purpose of maintaining the Local Area Network (LAN) connectivity among the nodes within the cluster.
+**On the master node (athm3)** we have cloned the forked version of [CODECO_edgenet](https://github.com/swnuom/edgenet). Additionally, within the repository, there is a _vpnpeer.yaml_ file, which serves the purpose of maintaining the Local Area Network (LAN) connectivity among the nodes within the cluster.
 
 > Check the vpnpeer.yaml on master (athm3)
 ```bash
